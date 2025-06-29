@@ -5,7 +5,6 @@ import com.perfectparitypg.entity.ModEntities;
 import com.perfectparitypg.particle.ModParticles;
 import com.perfectparitypg.sound.ModSounds;
 import com.perfectparitypg.utils.ModifyLootTables;
-import com.perfectparitypg.world.entity.ModBoats;
 import com.perfectparitypg.world.item.ModItems;
 import com.perfectparitypg.world.level.block.ModBlockFamilies;
 import com.perfectparitypg.world.level.block.ModBlockEntities;
@@ -41,7 +40,6 @@ public class PerfectParityPG implements ModInitializer {
 		ModSounds.registerSounds();
 		ModifyLootTables.modifyVanillaLootTables();
 		ModBlockFamilies.createBlockFamilies();
-		ModBoats.registerBoats();
 		ModEntities.registerModEntities();
 		ModBlockEntities.registerBlockEntities();
 		ModParticles.registerParticles();

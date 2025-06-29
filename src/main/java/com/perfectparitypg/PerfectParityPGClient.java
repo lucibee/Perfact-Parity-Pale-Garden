@@ -7,15 +7,16 @@ import com.perfectparitypg.particle.ModParticles;
 import com.perfectparitypg.particle.PaleOakParticle;
 import com.perfectparitypg.particle.TrailParticle;
 import com.perfectparitypg.world.biome.ModBiomes;
-import com.perfectparitypg.world.entity.ModBoats;
 import com.perfectparitypg.world.level.block.ModBlocks;
 import com.perfectparitypg.world.level.block.ModWoodTypes;
-import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
+import com.perfectparitypg.entity.PaleOakBoatRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.sounds.SoundSource;
@@ -32,13 +33,21 @@ public class PerfectParityPGClient implements ClientModInitializer {
                 ModBlocks.OPEN_EYEBLOSSOM, ModBlocks.CLOSED_EYEBLOSSOM, ModBlocks.POTTED_CLOSED_EYEBLOSSOM, ModBlocks.POTTED_OPEN_EYEBLOSSOM);
 
 
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.PALE_OAK_BOAT_ID, false);
+        // Removed TerraformBoatClientHelper registration (no longer needed)
 
         Sheets.getHangingSignMaterial(ModWoodTypes.PALE_OAK);
 
         EntityModelLayerRegistry.registerModelLayer(
                 ModModelLayers.CREAKING,
                 CreakingModel::createBodyLayer
+        );
+        EntityModelLayerRegistry.registerModelLayer(
+                PaleOakBoatRenderer.BOAT_LAYER,
+                BoatModel::createBodyModel
+        );
+        EntityModelLayerRegistry.registerModelLayer(
+                PaleOakBoatRenderer.CHEST_BOAT_LAYER,
+                ChestBoatModel::createBodyModel
         );
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.TRAIL, TrailParticle.Provider::new);

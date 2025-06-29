@@ -21,8 +21,8 @@ import org.joml.Quaternionf;
 public class PaleOakBoatRenderer extends EntityRenderer<Boat> {
     private final boolean hasChest;
     private final ListModel<Boat> model;
-    private static final ResourceLocation BOAT_TEXTURE = ResourceLocation.tryBuild("minecraft", "textures/entity/boat/pale_oak_boat.png");
-    private static final ResourceLocation CHEST_BOAT_TEXTURE = ResourceLocation.tryBuild("minecraft", "textures/entity/chest_boat/pale_oak_chest_boat.png");
+    private static final ResourceLocation BOAT_TEXTURE = ResourceLocation.tryBuild("minecraft", "textures/entity/boat/pale_oak.png");
+    private static final ResourceLocation CHEST_BOAT_TEXTURE = ResourceLocation.tryBuild("minecraft", "textures/entity/chest_boat/pale_oak.png");
     public static final ModelLayerLocation BOAT_LAYER = new ModelLayerLocation(ResourceLocation.withDefaultNamespace("pale_oak_boat"), "main");
     public static final ModelLayerLocation CHEST_BOAT_LAYER = new ModelLayerLocation(ResourceLocation.withDefaultNamespace("pale_oak_chest_boat"), "main");
 

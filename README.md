@@ -1,4 +1,4 @@
-handful of improvements + a rewrite for boats based off of Deeper And Darker's implementation. branched from main due to licensing differences
+handful of improvements + a rewrite for boats based off of Deeper And Darker's implementation to fix crashes with Sinytra Connector. branched from main due to licensing differences
 
 # Find the [Spring to Life (1.21.5) update here](https://modrinth.com/mod/perfect-parity-1-21-5)!
 

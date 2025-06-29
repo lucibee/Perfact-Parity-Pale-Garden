@@ -1,9 +1,8 @@
 package com.perfectparitypg.world.item;
 
 import com.perfectparitypg.entity.ModEntities;
-import com.perfectparitypg.world.entity.ModBoats;
 import com.perfectparitypg.world.level.block.ModBlocks;
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
+import com.perfectparitypg.world.item.PaleOakBoatItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.core.Registry;
@@ -27,11 +26,11 @@ public class ModItems {
     public static final Item PALE_OAK_SIGN = registerItem("pale_oak_sign", new SignItem(new Item.Properties().stacksTo(16), ModBlocks.PALE_OAK_SIGN, ModBlocks.PALE_OAK_WALL_SIGN));
     public static final Item PALE_OAK_HANGING_SIGN = registerItem("pale_oak_hanging_sign", new HangingSignItem(ModBlocks.PALE_OAK_HANGING_SIGN, ModBlocks.PALE_OAK_WALL_HANGING_SIGN, new Item.Properties().stacksTo(16)));
 
-    public static final Item PALE_OAK_BOAT = TerraformBoatItemHelper.registerBoatItem(
-            ModBoats.PALE_OAK_BOAT_ID, ModBoats.PALE_OAK_BOAT_KEY, false);
+    public static final Item PALE_OAK_BOAT = registerItem("pale_oak_boat",
+            new PaleOakBoatItem(false, new Item.Properties().stacksTo(1)));
 
-    public static final Item PALE_OAK_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(
-            ModBoats.PALE_OAK_CHEST_BOAT_ID, ModBoats.PALE_OAK_BOAT_KEY, true);
+    public static final Item PALE_OAK_CHEST_BOAT = registerItem("pale_oak_chest_boat",
+            new PaleOakBoatItem(true, new Item.Properties().stacksTo(1)));
 
     static {
         RESIN_BRICK = registerItem("resin_brick");

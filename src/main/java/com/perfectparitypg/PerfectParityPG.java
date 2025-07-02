@@ -2,6 +2,7 @@ package com.perfectparitypg;
 
 import com.perfectparitypg.config.Config;
 import com.perfectparitypg.entity.ModEntities;
+import com.perfectparitypg.event.WanderingTraderTrades;
 import com.perfectparitypg.particle.ModParticles;
 import com.perfectparitypg.sound.ModSounds;
 import com.perfectparitypg.utils.ModifyLootTables;
@@ -37,7 +38,7 @@ public class PerfectParityPG implements ModInitializer {
 		// Proceed with mild caution.
 
 		MobEvents.register();
-
+		WanderingTraderTrades.register();
 		ModBlocks.initialize();
 		ModItems.initialize();
 		ModSounds.registerSounds();
